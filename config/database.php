@@ -14,7 +14,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
             'host'     => "127.0.0.1",
             'dbname'   => "teste_atitude",
             'user'     => "root",
-            'password' => "mdba2007",
+            'password' => "123456",
             'charset'  => 'utf8mb4',
         ]
     ],

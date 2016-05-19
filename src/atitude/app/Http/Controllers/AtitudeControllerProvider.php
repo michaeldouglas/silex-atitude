@@ -35,7 +35,6 @@ class AtitudeControllerProvider implements ControllerProviderInterface
          * @return json retorna o Json contendo o objeto do vídeo
          */
         $controllers->get('/{id}', function (Application $app, $id) {
-            $app['cache']->store('foo', 'bar');
             if(count($this->getVideos($app, $id)) == 0) {
                 return new Response('Vídeos não encontrado', 400 , array('X-Status-Code' => 200));
             }

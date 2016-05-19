@@ -13,7 +13,7 @@ $app->register(new Moust\Silex\Provider\CacheServiceProvider(), array(
         'driver' => 'memcache',
         'memcache' => function () {
             $memcache = new \Memcache;
-            $memcache->connect('localhost', 8000);
+            $memcache->connect('127.0.0.1', 11211);
             return $memcache;
         }
     )

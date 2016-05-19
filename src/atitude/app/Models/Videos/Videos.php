@@ -9,8 +9,15 @@ class Videos
     
     public function getVideos($app, $id = 1)
     {
-        return $app['entityManager']->getRepository('atitude\app\Models\Entities\Api\Videos')
-        ->findOneBy(array('id_video' => $id));
+       
+        if(!$app['cache']->fetch('videos')) {
+            $dadosVideos = $app['entityManager']->getRepository('atitude\app\Models\Entities\Api\Videos')->findOneBy(array('id_video' => $id));
+            $app['cache']->store('videos', $dadosVideos);
+        } else {
+            $dadosVideos = $app['cache']->fetch('videos');
+        }
+
+        return $dadosVideos;
     }
     
     public function setVideos($app, $embed = '')
