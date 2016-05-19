@@ -1,0 +1,16 @@
+{
+    "require": {
+        "silex/silex": "~1.3",
+        "crada/php-apidoc": "@dev",
+        "doctrine/dbal": "~2.2",
+        "doctrine/orm"  : "*",
+        "doctrine/annotations": "*",
+        "doctrine/common": "2.5.*",
+        "moust/silex-cache": "1.0.*@dev"
+    },
+    "autoload": {
+        "psr-0":{
+            "atitude\\app\\": "src/"
+        }
+    }
+}
